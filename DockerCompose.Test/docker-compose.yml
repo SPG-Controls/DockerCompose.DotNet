@@ -1,0 +1,451 @@
+version: '3.2'
+
+services:
+  # core services
+  nginx:
+    image: spgcontrols/ui:develop
+
+    volumes:
+      - './nginx/nginx.conf:/etc/nginx/nginx.conf:ro'
+      - './nginx/.espasswd:/opt/elk/.espasswd:ro'
+      - './nginx/ssl:/etc/nginx/ssl:ro'
+      - './nginx/error.log:/var/log/nginx/error.log:rw'
+    ports:
+      - '5000:5000'
+      # - '7017:7017'
+      - '80:80'
+      - '7018:7018'
+      - '8881:8881'
+      - '8882:8882'
+      - '8883:8883'
+      - '58081:58081'
+      - target: 7016 # Bypass the docker load-balancer
+        published: 7016
+        protocol: tcp
+        mode: host
+      - target: 443 # Bypass the docker load-balancer
+        published: 443
+        protocol: tcp
+        mode: host
+    networks:
+      - default
+  #   depends_on:
+  #     - logstash
+  #   logging:
+  #     driver: gelf
+  #     options:
+  #       gelf-address: "udp://logstash:12201"
+
+  kong:
+    image: kong:2.2.1
+    environment:
+      - KONG_DATABASE=postgres
+      - KONG_PG_HOST=postgres
+      - KONG_PG_USER=kong
+      - KONG_PG_PASSWORD=SpgControls01
+      - KONG_PROXY_ACCESS_LOG=/dev/stdout
+      - KONG_ADMIN_ACCESS_LOG=/dev/stdout
+      - KONG_PROXY_ERROR_LOG=/dev/stderr
+      - KONG_ADMIN_ERROR_LOG=/dev/stderr
+      - KONG_ADMIN_LISTEN=0.0.0.0:8001, 0.0.0.0:8444 ssl
+    ports:
+      - "8000:8000"
+      - "8443:8443"
+ #     - "8001:8001"
+ #     - "8444:8444"
+    networks:
+      - default
+
+  konga:
+    image: pantsel/konga:0.14.9
+    environment:
+      - NODE_ENV=production
+      - TOKEN_SECRET=SpgControls01
+      - DB_ADAPTER=postgres
+      - DB_HOST=postgres
+      - DB_USER=kong
+      - DB_PASSWORD=SpgControls01
+      - KONG_PG_USER=kong
+      - KONG_PG_PASSWORD=SpgControls01
+      - KONG_PROXY_ACCESS_LOG=/dev/stdout
+      - KONG_ADMIN_ACCESS_LOG=/dev/stdout
+      - KONG_PROXY_ERROR_LOG=/dev/stderr
+      - KONG_ADMIN_ERROR_LOG=/dev/stderr
+      - KONG_ADMIN_LISTEN=0.0.0.0:8001, 0.0.0.0:8444 ssl
+    ports:
+      - "1337:1337"
+    networks:
+      - default
+
+  dockermonitor:
+    image: spgcontrols/arco-installer:develop
+ #   image: spgcontrols/dockermonitor:4.2.17735-internal
+    volumes: 
+      - '/var/run/docker.sock:/var/run/docker.sock'
+      - './docker-compose.yml:/app/docker-compose.yml'
+    ports:
+      - '5002:5001'
+    environment:
+      - DOCKER_URL=unix://./var/run/docker.sock
+      - ELASTIC_URIS=http://elasticsearch:9200
+    deploy:
+      placement:
+        constraints:
+          - node.role == manager
+
+  registry:
+    image: registry:2.7.1
+    networks:
+      - default
+    deploy:
+      placement:
+        constraints:
+          - node.role == manager
+      labels:
+        com.spg.name: "Registry"
+        com.spg.icon: "4c21fdc5-0ddd-3b2b-4272-e73b022ba5c2"
+
+  arcoservice:
+    image: spgcontrols/arcoservice:develop
+    environment:
+      - PROVIDER=MySQL
+      - SQL_CONNECTION=Server=db;Database=ArcoDb;Uid=root;Pwd=root;
+      - STATUS_CONNECTION=Server=db;Database=ArcoDbStatus;Uid=root;Pwd=root;
+      - VIEW_CONNECTION=Server=db;Database=ArcoDbView;Uid=root;Pwd=root;
+      - STATUSVIEW_CONNECTION=Server=db;Database=ArcoDbStatusView;Uid=root;Pwd=root;
+      - IMAGE_CONNECTION=Server=db;Database=ArcoDbImage;Uid=root;Pwd=root;
+      - ACTION_CONNECTION=Server=db;Database=ArcoDbAction;Uid=root;Pwd=root;
+      - ARCO_SECRETKEY="Hello"
+      - ELASTIC_URIS=http://elasticsearch:9200
+      - REDIS_URIS=redis:6379
+    volumes:
+      - './license.txt:/app/license.txt:ro'
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.role == manager
+    depends_on:
+      - db
+  #     - redis
+
+  redis:
+    image: redis:6.0.6
+   #     ports:
+   #      - '66379:6379'
+    deploy:
+      labels:
+        com.spg.name: 'Redis'
+        com.spg.icon: '674411e1-a145-5b82-862f-8727ae63bce4'
+
+  redis-commander:
+    hostname: redis-commander
+    image: rediscommander/redis-commander:latest
+    environment:
+      - REDIS_HOSTS=local:redis:6379
+   # ports:
+   #   - "58081:8081"
+
+  identity:
+    image: spgcontrols/identityserver:develop
+    environment:
+      - VIEW_CONNECTION=Server=db;Database=ArcoDbView;Uid=root;Pwd=SpgControls01!@;
+    networks:
+      - default
+    deploy:
+      replicas: 1
+
+  # integrations
+  gateway_s1000:
+    image: spgcontrols/gateway.s1000:develop
+    ports:
+      # - "7017:7016"
+      - target: 7016
+        published: 7017
+        protocol: tcp
+        mode: host
+    volumes:
+      - './appsettings-s1000.json:/app/appsettings.json'
+      - './s1000-gateway/server.pfx:/app/server.pfx:ro'
+    environment:
+      - ARCO_ADDRESS=http://arcoservice:5000
+      - ARCO_USER=gateway
+      - ARCO_PASSWORD=Z2dWnPa
+      - ELASTIC_URIS=http://elasticsearch:9200
+      - CERT=server.pfx
+      - CERTPASS=s1000
+    sysctls:
+      - net.ipv4.tcp_retries2=3
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+      resources:
+        limits:
+          cpus: '2'
+          memory: 2G
+        reservations:
+          cpus: '2'
+          memory: 2G
+      replicas: 1
+    depends_on:
+      - arcoservice
+
+  gateway_contactid:
+    image: spgcontrols/gateway.contactid.out:develop
+    command: ['--verbose']
+    volumes:
+      - './appsettings-cid.json:/app/appsettings.json'
+    environment:
+      - ARCO_ADDRESS=http://arcoservice:5000
+      - ARCO_USER=gateway
+      - ARCO_PASSWORD=Z2dWnPa
+      - ELASTIC_URIS=http://elasticsearch:9200
+    ports:
+      - target: 1024
+        published: 1024
+        protocol: tcp
+        mode: host
+    depends_on:
+      - arcoservice
+    networks:
+      - default
+    deploy:
+      replicas: 1
+
+  gateway_pushy:
+    image: spgcontrols/gateway.pushy:develop
+    environment:
+      - ARCO_ADDRESS=http://arcoservice:5000
+      - ARCO_USER=gateway
+      - ARCO_PASSWORD=Z2dWnPa
+    depends_on:
+      - arcoservice
+    networks:
+      - default
+    deploy:
+      replicas: 1
+
+  gateway_sbs:
+    image: spgcontrols/gateway.sbs:develop
+    environment:
+      - ARCO_ADDRESS=http://arcoservice:5000
+      - ARCO_USER=gateway
+      - ARCO_PASSWORD=Z2dWnPa
+    depends_on:
+      - arcoservice
+    networks:
+      - default
+    deploy:
+      replicas: 1
+
+  gateway_smtp:
+    image: spgcontrols/gateway.smtp:develop
+    environment:
+      - ARCO_ADDRESS=http://arcoservice:5000
+      - ARCO_USER=gateway
+      - ARCO_PASSWORD=Z2dWnPa
+    depends_on:
+      - arcoservice
+    networks:
+      - default
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "25m"
+    deploy:
+      replicas: 1
+
+  gateway_sip:
+    image: spgcontrols/gateway.sip:develop
+    ports:
+      - target: 5060
+        published: 5060
+        protocol: udp
+        mode: host
+    volumes:
+      - './appsettings-sip.json:/app/appsettings.json'
+    environment:
+      - ARCO_ADDRESS=http://arcoservice:5000
+      - ARCO_USER=gateway
+      - ARCO_PASSWORD=Z2dWnPa
+      - SIP_CALLBACK_ADDRESS=gateway_sip
+      - SIP_CALLBACK_PORT=5060
+    depends_on:
+      - arcoservice
+    networks:
+      - default
+    deploy:
+      replicas: 1
+
+  gateway_video:
+    image: spgcontrols/gateway.video:develop
+    environment:
+      - ARCO_ADDRESS=http://arcoservice:5000
+      - ARCO_USER=gateway
+      - ARCO_PASSWORD=Z2dWnPa
+    depends_on:
+      - arcoservice
+    networks:
+      - default
+    deploy:
+      replicas: 1
+
+  videoservice:
+    image: spgcontrols/videoservice:develop
+    volumes:
+      - recdata1:/app/records
+    environment:
+      - ARCO_ADDRESS=http://arcoservice:5000
+
+  video-proxy:
+    image: spgcontrols/video-proxy:4.2.18003-internal
+    volumes:
+      - './video-proxy/index.js:/app/index.js:ro'
+    environment:
+      - SERVER_PUBLIC=true
+      - ARCO_ADDRESS=http://arcoservice:5000
+      - VIDEO_ADDRESS=ws://videoservice:8082
+
+  # simulators
+  simulator_sbs:
+    image: spgcontrols/simulator.sbs:develop
+    volumes:
+      - './sbs/test-system-config.json:/app/test-system-config.json'
+    ports:
+      - '8884:80'
+    networks:
+      - default
+    deploy:
+      replicas: 1
+
+  # databases
+  db:
+    image: mysql
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --init-connect='SET NAMES UTF8;' --innodb-flush-log-at-trx-commit=0
+    volumes:
+      - dbdata1:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=SpgControls01!@
+    ports:
+      - '3306:3306'
+    deploy:
+      replicas: 1
+      labels:
+        com.spg.name: 'MySQL'
+        com.spg.icon: '8f4061d1-5b27-4e4f-94c5-d904339bd102'
+
+  postgres:
+    image: postgres:11.10
+    environment:
+      - POSTGRES_USER=kong
+      - POSTGRES_DB=kong
+      - POSTGRES_PASSWORD=SpgControls01
+    ports:
+      - "5432:5432"
+    volumes:
+      - dbdata2:/var/lib/postgresql/data
+    networks:
+      - default
+
+  elasticsearch:
+    image: elasticsearch:7.9.1
+    #   ports:
+    #     - "9200:9200"
+    #     - "9300:9300"
+    volumes:
+      - esdata1:/usr/share/elasticsearch/data
+    environment:
+      - discovery.type=single-node
+    deploy:
+      resources:
+        reservations:
+          memory: 4G
+      labels:
+        com.spg.name: 'Elasticsearch'
+        com.spg.icon: '163ae245-5296-f9aa-5ce8-0da844f3df0d'
+
+  kibana:
+    image: kibana:7.9.1
+    deploy:
+      labels:
+        com.spg.name: 'Kibana'
+        com.spg.icon: 'd6fd2852-13f6-63af-fc73-ee7c02ef8fb5'
+
+  metricbeat:
+    image: spgcontrols/metricbeat:develop
+    hostname: metricbeat
+    volumes:
+      - '/var/run/docker.sock:/var/run/docker.sock'
+      - '/sys/fs/cgroup:/hostfs/sys/fs/cgroup:ro'
+      - '/proc:/hostfs/proc:ro'
+      - '/:/hostfs:ro'
+    depends_on:
+      - elasticsearch
+    deploy:
+      replicas: 1
+      labels:
+        com.spg.name: 'Metricbeat'
+        com.spg.icon: '20f6ac47-2206-fa18-3d0c-f65f34904ad6'
+
+#  logstash:
+#    image: spgcontrols/logstash:latest
+#    hostname: logstash
+#    volumes: # Mounts for configuration files
+#      - ./logstash/pipeline:/usr/share/logstash/pipeline
+#      - ./logstash/config:/usr/share/logstash/config
+#    ports:
+#      - "9600:9600"
+#    deploy:
+#      replicas: 1
+#      labels:
+#        com.spg.name: "Logstash"
+#        com.spg.icon: "7d9d8565-0c6b-536a-27b8-f0b0c09653ad"
+
+  minio1:
+    image: 127.0.0.1:8889/minio/minio:RELEASE.2021-04-06T23-11-00Z
+    hostname: minio1
+    volumes:
+      - miniodata1-1:/data1
+      - miniodata1-2:/data2
+    environment:
+    -  MINIO_ROOT_USER=minioblah
+    -  MINIO_ROOT_PASSWORD=minio123blah
+    -  MINIO_REGION_NAME=local
+    command: server http://minio{1...3}/data{1...2}
+    ports:
+      - target: 9000
+        published: 9001
+    networks:
+      default:
+        aliases:
+          - minio
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+        - node.id == 66z77caw1v7oz4g4fx8oenyaf
+
+# Persistent Data
+volumes:
+  esdata1:
+    driver: local
+  dbdata1:
+    driver: local
+  dbdata2:
+    driver: local
+  recdata1:
+    driver: local
+
+# Make docker network attachable
+networks:
+  default:
+    driver: overlay
+    attachable: true

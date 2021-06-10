@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "keX60pyvfKTRMvW/E8sKiBGHuUo5h/aP5OxoF7gfyNAy7sdDFdX2H+h++7pBz6Sk52vzQAHeMrQUws7i8uDQcQ==",
+  "success": true,
+  "projectFilePath": "/home/spg/dev/arco-install/lib/DockerCompose.DotNet/DockerCompose.Model/DockerCompose.Model.csproj",
+  "expectedPackageFiles": [
+    "/home/spg/.nuget/packages/yamldotnet/9.1.4/yamldotnet.9.1.4.nupkg.sha512"
+  ],
+  "logs": []
+}

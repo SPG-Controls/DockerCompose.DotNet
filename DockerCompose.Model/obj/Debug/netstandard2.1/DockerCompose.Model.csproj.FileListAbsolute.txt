@@ -1,0 +1,8 @@
+/home/spg/dev/arco-install/lib/DockerCompose.DotNet/DockerCompose.Model/bin/Debug/netstandard2.1/DockerCompose.Model.deps.json
+/home/spg/dev/arco-install/lib/DockerCompose.DotNet/DockerCompose.Model/bin/Debug/netstandard2.1/DockerCompose.Model.dll
+/home/spg/dev/arco-install/lib/DockerCompose.DotNet/DockerCompose.Model/bin/Debug/netstandard2.1/DockerCompose.Model.pdb
+/home/spg/dev/arco-install/lib/DockerCompose.DotNet/DockerCompose.Model/obj/Debug/netstandard2.1/DockerCompose.Model.AssemblyInfoInputs.cache
+/home/spg/dev/arco-install/lib/DockerCompose.DotNet/DockerCompose.Model/obj/Debug/netstandard2.1/DockerCompose.Model.AssemblyInfo.cs
+/home/spg/dev/arco-install/lib/DockerCompose.DotNet/DockerCompose.Model/obj/Debug/netstandard2.1/DockerCompose.Model.csproj.CoreCompileInputs.cache
+/home/spg/dev/arco-install/lib/DockerCompose.DotNet/DockerCompose.Model/obj/Debug/netstandard2.1/DockerCompose.Model.dll
+/home/spg/dev/arco-install/lib/DockerCompose.DotNet/DockerCompose.Model/obj/Debug/netstandard2.1/DockerCompose.Model.pdb

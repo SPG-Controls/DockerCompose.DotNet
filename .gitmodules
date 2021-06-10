@@ -1,0 +1,3 @@
+[submodule "Docker.DotNet"]
+	path = Docker.DotNet
+	url = https://github.com/SPG-Controls/Docker.DotNet.git

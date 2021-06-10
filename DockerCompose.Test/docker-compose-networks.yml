@@ -1,0 +1,21 @@
+#version: '3.2'
+
+services:
+  #sequence:
+  #  networks:
+  #  - some-network
+  #  - other-network
+  mapping:
+    networks:
+      some-network:
+        aliases:
+        - alias1
+        - alias3
+      other-network:
+        aliases:
+        - alias2
+      yeet:
+        aliases:
+        - alias2
+        ipv4_address: 172.16.238.10
+        ipv6_address: 2001:3984:3989::10

@@ -1,0 +1,1682 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/spg/dev/arco-install/lib/DockerCompose.DotNet/DockerCompose.Test/DockerCompose.Test.csproj": {}
+  },
+  "projects": {
+    "/home/spg/dev/arco-install/Common/Common.Builders/Common.Builders.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/spg/dev/arco-install/Common/Common.Builders/Common.Builders.csproj",
+        "projectName": "SPG.Common.Builders",
+        "projectPath": "/home/spg/dev/arco-install/Common/Common.Builders/Common.Builders.csproj",
+        "packagesPath": "/home/spg/.nuget/packages/",
+        "outputPath": "/home/spg/dev/arco-install/Common/Common.Builders/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/spg/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "/home/spg/dev/arco-install/Common/Common.Docker/Common.Docker.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/Common/Common.Docker/Common.Docker.csproj"
+              },
+              "/home/spg/dev/arco-install/Common/Common.Integrations/Common.Integrations.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/Common/Common.Integrations/Common.Integrations.csproj"
+              },
+              "/home/spg/dev/arco-install/lib/Docker.DotNet/src/Docker.DotNet/Docker.DotNet.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/lib/Docker.DotNet/src/Docker.DotNet/Docker.DotNet.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.300/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/spg/dev/arco-install/Common/Common.Docker/Common.Docker.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/spg/dev/arco-install/Common/Common.Docker/Common.Docker.csproj",
+        "projectName": "SPG.Common.Docker",
+        "projectPath": "/home/spg/dev/arco-install/Common/Common.Docker/Common.Docker.csproj",
+        "packagesPath": "/home/spg/.nuget/packages/",
+        "outputPath": "/home/spg/dev/arco-install/Common/Common.Docker/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/spg/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "/home/spg/dev/arco-install/Common/Common.Progress/Common.Progress.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/Common/Common.Progress/Common.Progress.csproj"
+              },
+              "/home/spg/dev/arco-install/lib/Docker.DotNet/src/Docker.DotNet/Docker.DotNet.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/lib/Docker.DotNet/src/Docker.DotNet/Docker.DotNet.csproj"
+              },
+              "/home/spg/dev/arco-install/lib/DockerCompose.DotNet/DockerCompose.Deploy/DockerCompose.Deploy.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/lib/DockerCompose.DotNet/DockerCompose.Deploy/DockerCompose.Deploy.csproj"
+              },
+              "/home/spg/dev/arco-install/lib/Nginx.DotNet/Nginx.Model/Nginx.Model.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/lib/Nginx.DotNet/Nginx.Model/Nginx.Model.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "SPG.Common": {
+              "target": "Package",
+              "version": "[4.6.2, )"
+            },
+            "SPG.Framework.AspNetCore": {
+              "target": "Package",
+              "version": "[4.6.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.300/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/spg/dev/arco-install/Common/Common.Handlers/Common.Handlers.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/spg/dev/arco-install/Common/Common.Handlers/Common.Handlers.csproj",
+        "projectName": "SPG.Common.Handlers",
+        "projectPath": "/home/spg/dev/arco-install/Common/Common.Handlers/Common.Handlers.csproj",
+        "packagesPath": "/home/spg/.nuget/packages/",
+        "outputPath": "/home/spg/dev/arco-install/Common/Common.Handlers/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/spg/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.300/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/spg/dev/arco-install/Common/Common.Integrations/Common.Integrations.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/spg/dev/arco-install/Common/Common.Integrations/Common.Integrations.csproj",
+        "projectName": "SPG.Common.Integrations",
+        "projectPath": "/home/spg/dev/arco-install/Common/Common.Integrations/Common.Integrations.csproj",
+        "packagesPath": "/home/spg/.nuget/packages/",
+        "outputPath": "/home/spg/dev/arco-install/Common/Common.Integrations/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/spg/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "/home/spg/dev/arco-install/Common/Common.Docker/Common.Docker.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/Common/Common.Docker/Common.Docker.csproj"
+              },
+              "/home/spg/dev/arco-install/lib/DockerCompose.DotNet/DockerCompose.Model/DockerCompose.Model.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/lib/DockerCompose.DotNet/DockerCompose.Model/DockerCompose.Model.csproj"
+              },
+              "/home/spg/dev/arco-install/lib/Nginx.DotNet/Nginx.Model/Nginx.Model.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/lib/Nginx.DotNet/Nginx.Model/Nginx.Model.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.300/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/spg/dev/arco-install/Common/Common.Licensing/Common.Licensing.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/spg/dev/arco-install/Common/Common.Licensing/Common.Licensing.csproj",
+        "projectName": "SPG.Common.Licensing",
+        "projectPath": "/home/spg/dev/arco-install/Common/Common.Licensing/Common.Licensing.csproj",
+        "packagesPath": "/home/spg/.nuget/packages/",
+        "outputPath": "/home/spg/dev/arco-install/Common/Common.Licensing/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/spg/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "/home/spg/dev/arco-install/Common/Common.Docker/Common.Docker.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/Common/Common.Docker/Common.Docker.csproj"
+              },
+              "/home/spg/dev/arco-install/lib/DockerCompose.DotNet/DockerCompose.Deploy/DockerCompose.Deploy.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/lib/DockerCompose.DotNet/DockerCompose.Deploy/DockerCompose.Deploy.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.300/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/spg/dev/arco-install/Common/Common.Progress/Common.Progress.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/spg/dev/arco-install/Common/Common.Progress/Common.Progress.csproj",
+        "projectName": "SPG.Common.Progress",
+        "projectPath": "/home/spg/dev/arco-install/Common/Common.Progress/Common.Progress.csproj",
+        "packagesPath": "/home/spg/.nuget/packages/",
+        "outputPath": "/home/spg/dev/arco-install/Common/Common.Progress/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/spg/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.Extensions.Logging.Abstractions": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.300/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/spg/dev/arco-install/Common/Common.Settings/Common.Settings.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/spg/dev/arco-install/Common/Common.Settings/Common.Settings.csproj",
+        "projectName": "SPG.Common.Settings",
+        "projectPath": "/home/spg/dev/arco-install/Common/Common.Settings/Common.Settings.csproj",
+        "packagesPath": "/home/spg/.nuget/packages/",
+        "outputPath": "/home/spg/dev/arco-install/Common/Common.Settings/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/spg/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "/home/spg/dev/arco-install/Common/Common.Progress/Common.Progress.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/Common/Common.Progress/Common.Progress.csproj"
+              },
+              "/home/spg/dev/arco-install/lib/Docker.DotNet/src/Docker.DotNet/Docker.DotNet.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/lib/Docker.DotNet/src/Docker.DotNet/Docker.DotNet.csproj"
+              },
+              "/home/spg/dev/arco-install/lib/DockerCompose.DotNet/DockerCompose.Deploy/DockerCompose.Deploy.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/lib/DockerCompose.DotNet/DockerCompose.Deploy/DockerCompose.Deploy.csproj"
+              },
+              "/home/spg/dev/arco-install/lib/Nginx.DotNet/Nginx.Model/Nginx.Model.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/lib/Nginx.DotNet/Nginx.Model/Nginx.Model.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "SPG.Common": {
+              "target": "Package",
+              "version": "[4.6.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.300/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/spg/dev/arco-install/Common/Common.Versions/Common.Versions.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/spg/dev/arco-install/Common/Common.Versions/Common.Versions.csproj",
+        "projectName": "SPG.Common.Versions",
+        "projectPath": "/home/spg/dev/arco-install/Common/Common.Versions/Common.Versions.csproj",
+        "packagesPath": "/home/spg/.nuget/packages/",
+        "outputPath": "/home/spg/dev/arco-install/Common/Common.Versions/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/spg/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "SPG.Common": {
+              "target": "Package",
+              "version": "[4.6.2, )"
+            },
+            "SPG.Framework.AspNetCore": {
+              "target": "Package",
+              "version": "[4.6.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.300/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/spg/dev/arco-install/System/backup-service/Backup.API/Backup.API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/spg/dev/arco-install/System/backup-service/Backup.API/Backup.API.csproj",
+        "projectName": "SPG.Backup.API",
+        "projectPath": "/home/spg/dev/arco-install/System/backup-service/Backup.API/Backup.API.csproj",
+        "packagesPath": "/home/spg/.nuget/packages/",
+        "outputPath": "/home/spg/dev/arco-install/System/backup-service/Backup.API/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/spg/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "/home/spg/dev/arco-install/Common/Common.Progress/Common.Progress.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/Common/Common.Progress/Common.Progress.csproj"
+              },
+              "/home/spg/dev/arco-install/Tools/Database/Tools.Database.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/Tools/Database/Tools.Database.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "FluentAssertions": {
+              "target": "Package",
+              "version": "[5.10.0, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[8.6.1, )"
+            },
+            "Microsoft.Extensions.CommandLineUtils": {
+              "target": "Package",
+              "version": "[1.1.1, )"
+            },
+            "SPG.Common": {
+              "target": "Package",
+              "version": "[4.6.2, )"
+            },
+            "SPG.Common.Logging": {
+              "target": "Package",
+              "version": "[4.6.2, )"
+            },
+            "SPG.Framework.AspNetCore": {
+              "target": "Package",
+              "version": "[4.6.2, )"
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[3.2.0, )"
+            },
+            "Serilog.Settings.Configuration": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Serilog.Sinks.Console": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Serilog.Sinks.Elasticsearch": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Serilog.Sinks.MSSqlServerCore": {
+              "target": "Package",
+              "version": "[1.1.1, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[4.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.300/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/spg/dev/arco-install/System/checklist-service/Checklist.API/Checklist.API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/spg/dev/arco-install/System/checklist-service/Checklist.API/Checklist.API.csproj",
+        "projectName": "SPG.Checklist.API",
+        "projectPath": "/home/spg/dev/arco-install/System/checklist-service/Checklist.API/Checklist.API.csproj",
+        "packagesPath": "/home/spg/.nuget/packages/",
+        "outputPath": "/home/spg/dev/arco-install/System/checklist-service/Checklist.API/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/spg/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "/home/spg/dev/arco-install/Common/Common.Docker/Common.Docker.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/Common/Common.Docker/Common.Docker.csproj"
+              },
+              "/home/spg/dev/arco-install/Common/Common.Handlers/Common.Handlers.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/Common/Common.Handlers/Common.Handlers.csproj"
+              },
+              "/home/spg/dev/arco-install/Common/Common.Integrations/Common.Integrations.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/Common/Common.Integrations/Common.Integrations.csproj"
+              },
+              "/home/spg/dev/arco-install/Common/Common.Licensing/Common.Licensing.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/Common/Common.Licensing/Common.Licensing.csproj"
+              },
+              "/home/spg/dev/arco-install/Common/Common.Versions/Common.Versions.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/Common/Common.Versions/Common.Versions.csproj"
+              },
+              "/home/spg/dev/arco-install/lib/DockerCompose.DotNet/DockerCompose.Deploy/DockerCompose.Deploy.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/lib/DockerCompose.DotNet/DockerCompose.Deploy/DockerCompose.Deploy.csproj"
+              },
+              "/home/spg/dev/arco-install/lib/DockerCompose.DotNet/DockerCompose.Model/DockerCompose.Model.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/lib/DockerCompose.DotNet/DockerCompose.Model/DockerCompose.Model.csproj"
+              },
+              "/home/spg/dev/arco-install/lib/Nginx.DotNet/Nginx.Model/Nginx.Model.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/lib/Nginx.DotNet/Nginx.Model/Nginx.Model.csproj"
+              },
+              "/home/spg/dev/arco-install/lib/SSL.Model/SSL.Model.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/lib/SSL.Model/SSL.Model.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "FluentAssertions": {
+              "target": "Package",
+              "version": "[5.10.0, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[8.6.1, )"
+            },
+            "SPG.Common": {
+              "target": "Package",
+              "version": "[4.6.2, )"
+            },
+            "SPG.Common.Logging": {
+              "target": "Package",
+              "version": "[4.6.2, )"
+            },
+            "SPG.Framework.AspNetCore": {
+              "target": "Package",
+              "version": "[4.6.2, )"
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[3.2.0, )"
+            },
+            "Serilog.Settings.Configuration": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Serilog.Sinks.Console": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Serilog.Sinks.Elasticsearch": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Serilog.Sinks.MSSqlServerCore": {
+              "target": "Package",
+              "version": "[1.1.1, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[4.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.300/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/spg/dev/arco-install/System/docker-service/Docker.API/Docker.API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/spg/dev/arco-install/System/docker-service/Docker.API/Docker.API.csproj",
+        "projectName": "SPG.Docker.API",
+        "projectPath": "/home/spg/dev/arco-install/System/docker-service/Docker.API/Docker.API.csproj",
+        "packagesPath": "/home/spg/.nuget/packages/",
+        "outputPath": "/home/spg/dev/arco-install/System/docker-service/Docker.API/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/spg/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "/home/spg/dev/arco-install/Common/Common.Builders/Common.Builders.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/Common/Common.Builders/Common.Builders.csproj"
+              },
+              "/home/spg/dev/arco-install/Common/Common.Docker/Common.Docker.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/Common/Common.Docker/Common.Docker.csproj"
+              },
+              "/home/spg/dev/arco-install/Common/Common.Handlers/Common.Handlers.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/Common/Common.Handlers/Common.Handlers.csproj"
+              },
+              "/home/spg/dev/arco-install/Common/Common.Progress/Common.Progress.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/Common/Common.Progress/Common.Progress.csproj"
+              },
+              "/home/spg/dev/arco-install/Common/Common.Settings/Common.Settings.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/Common/Common.Settings/Common.Settings.csproj"
+              },
+              "/home/spg/dev/arco-install/Common/Common.Versions/Common.Versions.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/Common/Common.Versions/Common.Versions.csproj"
+              },
+              "/home/spg/dev/arco-install/System/backup-service/Backup.API/Backup.API.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/System/backup-service/Backup.API/Backup.API.csproj"
+              },
+              "/home/spg/dev/arco-install/System/checklist-service/Checklist.API/Checklist.API.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/System/checklist-service/Checklist.API/Checklist.API.csproj"
+              },
+              "/home/spg/dev/arco-install/System/license-service/License.API/Licensing.API.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/System/license-service/License.API/Licensing.API.csproj"
+              },
+              "/home/spg/dev/arco-install/System/system-status-service/SystemStatus.API/SystemStatus.API.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/System/system-status-service/SystemStatus.API/SystemStatus.API.csproj"
+              },
+              "/home/spg/dev/arco-install/lib/DockerCompose.DotNet/DockerCompose.Deploy/DockerCompose.Deploy.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/lib/DockerCompose.DotNet/DockerCompose.Deploy/DockerCompose.Deploy.csproj"
+              },
+              "/home/spg/dev/arco-install/lib/DockerCompose.DotNet/DockerCompose.Model/DockerCompose.Model.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/lib/DockerCompose.DotNet/DockerCompose.Model/DockerCompose.Model.csproj"
+              },
+              "/home/spg/dev/arco-install/lib/Nginx.DotNet/Nginx.Model/Nginx.Model.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/lib/Nginx.DotNet/Nginx.Model/Nginx.Model.csproj"
+              },
+              "/home/spg/dev/arco-install/lib/SSL.Model/SSL.Model.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/lib/SSL.Model/SSL.Model.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "FluentAssertions": {
+              "target": "Package",
+              "version": "[5.10.0, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[8.6.1, )"
+            },
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.0.21, )"
+            },
+            "Npgsql": {
+              "target": "Package",
+              "version": "[4.1.5, )"
+            },
+            "SPG.Common.Logging": {
+              "target": "Package",
+              "version": "[4.6.2, )"
+            },
+            "SPG.Framework.AspNetCore": {
+              "target": "Package",
+              "version": "[4.6.2, )"
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[3.2.0, )"
+            },
+            "Serilog.Settings.Configuration": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Serilog.Sinks.Console": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Serilog.Sinks.Elasticsearch": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Serilog.Sinks.MSSqlServerCore": {
+              "target": "Package",
+              "version": "[1.1.1, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[4.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.300/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/spg/dev/arco-install/System/license-service/License.API/Licensing.API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/spg/dev/arco-install/System/license-service/License.API/Licensing.API.csproj",
+        "projectName": "SPG.Licensing.API",
+        "projectPath": "/home/spg/dev/arco-install/System/license-service/License.API/Licensing.API.csproj",
+        "packagesPath": "/home/spg/.nuget/packages/",
+        "outputPath": "/home/spg/dev/arco-install/System/license-service/License.API/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/spg/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "/home/spg/dev/arco-install/Common/Common.Docker/Common.Docker.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/Common/Common.Docker/Common.Docker.csproj"
+              },
+              "/home/spg/dev/arco-install/Common/Common.Licensing/Common.Licensing.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/Common/Common.Licensing/Common.Licensing.csproj"
+              },
+              "/home/spg/dev/arco-install/lib/DockerCompose.DotNet/DockerCompose.Deploy/DockerCompose.Deploy.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/lib/DockerCompose.DotNet/DockerCompose.Deploy/DockerCompose.Deploy.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "FluentAssertions": {
+              "target": "Package",
+              "version": "[5.10.0, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[8.6.1, )"
+            },
+            "SPG.Common.Logging": {
+              "target": "Package",
+              "version": "[4.6.2, )"
+            },
+            "SPG.Framework.AspNetCore": {
+              "target": "Package",
+              "version": "[4.6.2, )"
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[3.2.0, )"
+            },
+            "Serilog.Settings.Configuration": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Serilog.Sinks.Console": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Serilog.Sinks.Elasticsearch": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Serilog.Sinks.MSSqlServerCore": {
+              "target": "Package",
+              "version": "[1.1.1, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[4.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.300/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/spg/dev/arco-install/System/system-status-service/SystemStatus.API/SystemStatus.API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/spg/dev/arco-install/System/system-status-service/SystemStatus.API/SystemStatus.API.csproj",
+        "projectName": "SPG.SystemStatus.API",
+        "projectPath": "/home/spg/dev/arco-install/System/system-status-service/SystemStatus.API/SystemStatus.API.csproj",
+        "packagesPath": "/home/spg/.nuget/packages/",
+        "outputPath": "/home/spg/dev/arco-install/System/system-status-service/SystemStatus.API/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/spg/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "/home/spg/dev/arco-install/Common/Common.Docker/Common.Docker.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/Common/Common.Docker/Common.Docker.csproj"
+              },
+              "/home/spg/dev/arco-install/Common/Common.Settings/Common.Settings.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/Common/Common.Settings/Common.Settings.csproj"
+              },
+              "/home/spg/dev/arco-install/Common/Common.Versions/Common.Versions.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/Common/Common.Versions/Common.Versions.csproj"
+              },
+              "/home/spg/dev/arco-install/lib/DockerCompose.DotNet/DockerCompose.Model/DockerCompose.Model.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/lib/DockerCompose.DotNet/DockerCompose.Model/DockerCompose.Model.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "FluentAssertions": {
+              "target": "Package",
+              "version": "[5.10.0, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[8.6.1, )"
+            },
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.0.21, )"
+            },
+            "Npgsql": {
+              "target": "Package",
+              "version": "[4.1.5, )"
+            },
+            "SPG.Common": {
+              "target": "Package",
+              "version": "[4.6.2, )"
+            },
+            "SPG.Common.Logging": {
+              "target": "Package",
+              "version": "[4.6.2, )"
+            },
+            "SPG.Framework.AspNetCore": {
+              "target": "Package",
+              "version": "[4.6.2, )"
+            },
+            "SPG.Integrations.Client": {
+              "target": "Package",
+              "version": "[4.6.2, )"
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[3.2.0, )"
+            },
+            "Serilog.Settings.Configuration": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Serilog.Sinks.Console": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Serilog.Sinks.Elasticsearch": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Serilog.Sinks.MSSqlServerCore": {
+              "target": "Package",
+              "version": "[1.1.1, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[4.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.300/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/spg/dev/arco-install/Tools/Database/Tools.Database.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/spg/dev/arco-install/Tools/Database/Tools.Database.csproj",
+        "projectName": "SPG.Tools.Database",
+        "projectPath": "/home/spg/dev/arco-install/Tools/Database/Tools.Database.csproj",
+        "packagesPath": "/home/spg/.nuget/packages/",
+        "outputPath": "/home/spg/dev/arco-install/Tools/Database/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/spg/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "/home/spg/dev/arco-install/Common/Common.Docker/Common.Docker.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/Common/Common.Docker/Common.Docker.csproj"
+              },
+              "/home/spg/dev/arco-install/Common/Common.Progress/Common.Progress.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/Common/Common.Progress/Common.Progress.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.Extensions.CommandLineUtils": {
+              "target": "Package",
+              "version": "[1.1.1, )"
+            },
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.SqlServer.SqlManagementObjects": {
+              "target": "Package",
+              "version": "[160.2004021.0, )"
+            },
+            "MySqlBackup.NET": {
+              "target": "Package",
+              "version": "[2.3.1, )"
+            },
+            "SPG.Common": {
+              "target": "Package",
+              "version": "[4.6.2, )"
+            },
+            "SPG.Framework": {
+              "target": "Package",
+              "version": "[4.6.2, )"
+            },
+            "Serilog.Extensions.Logging": {
+              "target": "Package",
+              "version": "[3.0.1, )"
+            },
+            "System.IO.Compression.ZipFile": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.300/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/spg/dev/arco-install/lib/Docker.DotNet/src/Docker.DotNet/Docker.DotNet.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/spg/dev/arco-install/lib/Docker.DotNet/src/Docker.DotNet/Docker.DotNet.csproj",
+        "projectName": "Docker.DotNet",
+        "projectPath": "/home/spg/dev/arco-install/lib/Docker.DotNet/src/Docker.DotNet/Docker.DotNet.csproj",
+        "packagesPath": "/home/spg/.nuget/packages/",
+        "outputPath": "/home/spg/dev/arco-install/lib/Docker.DotNet/src/Docker.DotNet/obj/",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "configFilePaths": [
+          "/home/spg/dev/arco-install/lib/Docker.DotNet/NuGet.Config",
+          "/home/spg/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://dotnet.myget.org/F/dotnet-core/api/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "Microsoft.SourceLink.GitHub": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "Nerdbank.GitVersioning": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.4.205, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "System.Buffers": {
+              "target": "Package",
+              "version": "[4.5.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.300/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/spg/dev/arco-install/lib/DockerCompose.DotNet/DockerCompose.Deploy/DockerCompose.Deploy.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/spg/dev/arco-install/lib/DockerCompose.DotNet/DockerCompose.Deploy/DockerCompose.Deploy.csproj",
+        "projectName": "DockerCompose.Deploy",
+        "projectPath": "/home/spg/dev/arco-install/lib/DockerCompose.DotNet/DockerCompose.Deploy/DockerCompose.Deploy.csproj",
+        "packagesPath": "/home/spg/.nuget/packages/",
+        "outputPath": "/home/spg/dev/arco-install/lib/DockerCompose.DotNet/DockerCompose.Deploy/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/spg/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "/home/spg/dev/arco-install/lib/Docker.DotNet/src/Docker.DotNet/Docker.DotNet.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/lib/Docker.DotNet/src/Docker.DotNet/Docker.DotNet.csproj"
+              },
+              "/home/spg/dev/arco-install/lib/DockerCompose.DotNet/DockerCompose.Model/DockerCompose.Model.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/lib/DockerCompose.DotNet/DockerCompose.Model/DockerCompose.Model.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "Microsoft.Extensions.Logging.Abstractions": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.300/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/spg/dev/arco-install/lib/DockerCompose.DotNet/DockerCompose.Model/DockerCompose.Model.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/spg/dev/arco-install/lib/DockerCompose.DotNet/DockerCompose.Model/DockerCompose.Model.csproj",
+        "projectName": "DockerCompose.Model",
+        "projectPath": "/home/spg/dev/arco-install/lib/DockerCompose.DotNet/DockerCompose.Model/DockerCompose.Model.csproj",
+        "packagesPath": "/home/spg/.nuget/packages/",
+        "outputPath": "/home/spg/dev/arco-install/lib/DockerCompose.DotNet/DockerCompose.Model/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/spg/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "YamlDotNet": {
+              "target": "Package",
+              "version": "[9.1.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.300/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/spg/dev/arco-install/lib/DockerCompose.DotNet/DockerCompose.Test/DockerCompose.Test.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/spg/dev/arco-install/lib/DockerCompose.DotNet/DockerCompose.Test/DockerCompose.Test.csproj",
+        "projectName": "SPG.DockerCompose.Test",
+        "projectPath": "/home/spg/dev/arco-install/lib/DockerCompose.DotNet/DockerCompose.Test/DockerCompose.Test.csproj",
+        "packagesPath": "/home/spg/.nuget/packages/",
+        "outputPath": "/home/spg/dev/arco-install/lib/DockerCompose.DotNet/DockerCompose.Test/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/spg/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "/home/spg/dev/arco-install/Common/Common.Docker/Common.Docker.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/Common/Common.Docker/Common.Docker.csproj"
+              },
+              "/home/spg/dev/arco-install/System/docker-service/Docker.API/Docker.API.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/System/docker-service/Docker.API/Docker.API.csproj"
+              },
+              "/home/spg/dev/arco-install/lib/DockerCompose.DotNet/DockerCompose.Model/DockerCompose.Model.csproj": {
+                "projectPath": "/home/spg/dev/arco-install/lib/DockerCompose.DotNet/DockerCompose.Model/DockerCompose.Model.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "FluentAssertions": {
+              "target": "Package",
+              "version": "[5.10.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.4.0, )"
+            },
+            "Microsoft.TestPlatform.TestHost": {
+              "target": "Package",
+              "version": "[16.4.0, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "xunit.categories": {
+              "target": "Package",
+              "version": "[2.0.4, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.4.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.300/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/spg/dev/arco-install/lib/Nginx.DotNet/Nginx.Model/Nginx.Model.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/spg/dev/arco-install/lib/Nginx.DotNet/Nginx.Model/Nginx.Model.csproj",
+        "projectName": "Nginx.Model",
+        "projectPath": "/home/spg/dev/arco-install/lib/Nginx.DotNet/Nginx.Model/Nginx.Model.csproj",
+        "packagesPath": "/home/spg/.nuget/packages/",
+        "outputPath": "/home/spg/dev/arco-install/lib/Nginx.DotNet/Nginx.Model/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/spg/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.300/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/spg/dev/arco-install/lib/SSL.Model/SSL.Model.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/spg/dev/arco-install/lib/SSL.Model/SSL.Model.csproj",
+        "projectName": "SSL.Model",
+        "projectPath": "/home/spg/dev/arco-install/lib/SSL.Model/SSL.Model.csproj",
+        "packagesPath": "/home/spg/.nuget/packages/",
+        "outputPath": "/home/spg/dev/arco-install/lib/SSL.Model/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/spg/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.300/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
