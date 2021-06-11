@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <AssemblyName>SPG.DockerCompose.Test</AssemblyName>    
-    <RootNamespace>SPG.DockerCompose.Test</RootNamespace>
+    <AssemblyName>DockerCompose.Test</AssemblyName>    
+    <RootNamespace>DockerCompose.Test</RootNamespace>
     <IsTestProject>true</IsTestProject>
     
   </PropertyGroup>
@@ -39,9 +39,7 @@
   </ItemGroup>
   
   <ItemGroup>
-    <ProjectReference Include="..\..\..\System\docker-service\Docker.API\Docker.API.csproj" />
-    <ProjectReference Include="..\..\..\Common\Common.Docker\Common.Docker.csproj" />
-    <ProjectReference Include="..\..\DockerCompose.DotNet\DockerCompose.Model\DockerCompose.Model.csproj" />
+    <ProjectReference Include="..\DockerCompose.Model\DockerCompose.Model.csproj" />
   </ItemGroup>
 
   <ItemGroup>
